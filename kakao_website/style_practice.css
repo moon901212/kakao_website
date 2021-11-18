@@ -1,0 +1,311 @@
+body {
+  color: black;
+  letter-spacing: -2px;
+  /* word-break: keep-all; */
+  /* word-wrap: break-word; */
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+/* header */
+header {
+  width: 100%;
+  height: 70px;
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: rgb(192, 143, 143);
+  margin-bottom: 70px;
+}
+
+nav {
+  width: 1300px;
+  margin: auto;
+  /* position: -webkit-sticky;
+  position: sticky; */
+  background-color: rgb(192, 143, 143);
+}
+
+nav .nav_bar {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+  
+}
+
+nav .nav_bar .logo {
+  font-weight: 400;
+  font-size: 30px;
+  margin: auto 0;
+}
+
+nav .nav_bar .logo a img {
+  width: 70px;
+}
+
+nav .nav_bar ul {
+  display: flex;
+}
+
+nav .nav_bar .main_menu:hover a {
+  color: #888;
+}
+
+nav .nav_bar .main_menu li:hover a {
+  color: black;
+}
+
+nav .nav_bar .main_menu li a {
+  padding: 10px 25px;
+  font-weight: 700;
+}
+
+nav .nav_bar .main_icon a {}
+
+nav .nav_bar .main_icon i {
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+}
+
+nav .nav_bar .main_icon li:hover i {
+  background-color: #eee;
+  border-radius: 50px;
+}
+
+.nav_bar .main_icon .i4 {
+  display: none;
+}
+
+@media screen and (max-width: 1350px) {
+  nav {
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  nav {
+    width: 630px;
+  }
+
+  .nav_bar .main_menu {
+    display: none;
+  }
+
+  .nav_bar .main_icon .i2,
+  .nav_bar .main_icon .i3 {
+    display: none;
+  }
+
+  .nav_bar .main_icon .i4 {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  nav {
+    width: 364px;
+    padding: 0 24px;
+  }
+
+  .nav_bar .main_icon .i4 {
+    display: block;
+  }
+}
+
+
+
+/* container */
+.container {
+  width: 1300px;
+  margin: 100px auto 50px;
+
+}
+
+.container h1::before {
+  display: block;
+  content: '';
+  background: url(https://www.kakaocorp.com/page/calendar/light/ico_date17.gif) no-repeat;
+  /* 이미지 그냥 주소로 넣었는데 img로 다운받는게 더 좋은지? */
+  /* 이거 날짜 저절로 바뀌는거 어떻게 하는지? */
+  background-size: contain;
+  height: 70px;
+  width: 70px;
+  float: left;
+  margin-right: 20px;
+}
+
+.container h1,
+.container h2 {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 71px;
+  letter-spacing: -5px;
+}
+
+.container h2 {
+  line-height: 55px;
+}
+
+.container article {
+  margin-top: 100px;
+  display: flex;
+}
+
+.container article .main_card {
+  box-shadow: 3px 3px 20px 3px rgb(236, 236, 236);
+  background-color: #fff;
+  border-radius: 30px;
+  width: 630px;
+  height: 588px;
+  overflow: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+}
+
+.container article .main_card:hover,
+.container article .side ul li:hover {
+  box-shadow: 3px 3px 20px 3px rgb(212, 211, 211);
+  position: relative;
+  top: -3px;
+
+}
+
+.container article .content {
+  padding: 25px;
+}
+
+.container article .content .top {
+  height: 60px;
+}
+
+.container article .content img {
+  height: 50px;
+  width: 50px;
+  float: left;
+}
+
+.container article .content span {
+  padding: 10px;
+  font-size: 10px;
+  background-color: #dddddd;
+  border-radius: 13px;
+  float: left;
+  margin: 10px;
+  /* margin을 모든 값에 주는 것 말고 span태그 자체를 
+  위아래 정렬 하고싶은데 잘 안되네 margin을 20px로 변경하면
+  정렬이 하나도 안맞아!*/
+}
+
+.container article .content span::after {
+  display: inline-block;
+  /* 이게 block이었을때는 보도자료의 배경이 짤리게 나옴 */
+  /* 뭐가 문제지? 왜 이렇게 됐을까 생각헤보기 */
+  content: "";
+  background-color: red;
+  height: 4px;
+  width: 4px;
+  border-radius: 2px;
+  position: relative;
+  /* position relative와 absolute의 위치 확인해보기 */
+  left: 20px;
+  bottom: 20px;
+}
+
+.container article .content i {
+  color: #999;
+  float: right;
+  margin-top: 10px;
+}
+
+.container article .content h2 {
+  font-size: 30px;
+  clear: both;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.container article .content .hash {
+  display: flex;
+  margin: 10px 0;
+}
+
+.container article .content .hash p {
+  color: #aaa;
+  letter-spacing: 1px;
+}
+
+.container article .main_img {
+  width: 100%;
+  /* overflow: hidden; */
+  /* object-fit: cover; */
+}
+
+@media screen and (max-width: 1350px) {
+  .container {
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .container {
+    width: 630px;
+  }
+
+  .container h1::before {
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+  }
+
+  .container h1,
+  .container>h2 {
+    font-size: 30px;
+    line-height: 35px;
+    margin: 10px auto;
+  }
+  /* @media screen and (orientation : portrait) {
+    .container h2::after {
+      content: '11월 소식';
+      display: block;
+    } */
+  }
+
+  @media screen and (max-width: 750px) {
+    .container {
+      width: 364px;
+      padding: 0 24px;
+    }
+
+    .container article .main_card {
+      width: 364px;
+      height: 483.7px;
+    }
+  }
+
+  /* side-card */
+  .grid_item {
+    display: grid;
+    grid-template-rows: 192px;
+    grid-template-columns: 297px;
+  }
+  .container article {
+    
+  }
+
+  .container article .side_card{
+    box-shadow: 3px 3px 20px 3px rgb(236, 236, 236);
+    border-radius: 30px;
+    /* width: 297px; */
+    /* height: 420px; */
+    /* overflow: hidden; */
+  }
